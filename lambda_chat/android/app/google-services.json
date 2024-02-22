@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "200367073891",
+    "project_id": "lambda-820d2",
+    "storage_bucket": "lambda-820d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200367073891:android:f130d2f5ad6a7b5c70a656",
+        "android_client_info": {
+          "package_name": "com.example.lambda_chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOY126MhqmLmUIZ4-HgBxgB7o37Al3SW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
