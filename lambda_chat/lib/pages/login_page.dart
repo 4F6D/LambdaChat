@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lambda_chat/services/auth/auth_service.dart';
 import 'package:lambda_chat/components/my_button.dart';
 import 'package:lambda_chat/components/my_textfield.dart';
 
@@ -15,7 +16,24 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key, required this.onTap});
 
   // LOGIN METHOD
-  void login() {}
+  void login(BuildContext context) async {
+    // Auth service
+    final authService = AuthService();
+
+    // try login
+    try {
+      await authService.signInWithEmailPassword(_emailController.text, _passwordController.text);
+    }
+    // Catch Errors
+    catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+        title: Text(e.toString()),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +82,7 @@ class LoginPage extends StatelessWidget {
             // login button
             MyButton(
                 text: 'Login',
-              onTap: login,
+              onTap: () => login(context),
             ),
 
             const SizedBox(height: 25),
